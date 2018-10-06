@@ -1,4 +1,7 @@
 # gatsby-starter-business-v2
+
+*work in progress*
+
 A [Gatsby](https://www.gatsbyjs.org/) and [Netlify CMS](https://www.netlifycms.org) powered generic business website starter based on [gatsby-starter-business](https://github.com/v4iv/gatsby-starter-business).   
 
 It follows the [JAMstack architecture](https://jamstack.org) by using Git as a single source of truth, and [Netlify](https://www.netlify.com) for continuous deployment, and CDN distribution.
