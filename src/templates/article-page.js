@@ -1,6 +1,3 @@
-/**
- * Created by vaibhav on 31/3/18
- */
 import React from 'react'
 import PropTypes from 'prop-types'
 import {kebabCase} from 'lodash'
@@ -9,6 +6,7 @@ import Content, {HTMLContent} from '../components/Content'
 import SE0 from '../components/SEO'
 import Disqus from '../components/Disqus'
 import Share from '../components/Share'
+import Layout from '../components/layout-biz'
 
 export const ArticleTemplate = ({
   content,
@@ -82,16 +80,18 @@ ArticleTemplate.propTypes = {
 const ArticlePage = ({data}) => {
   const {markdownRemark: post} = data
   return (
-    <ArticleTemplate
-      content={post.html}
-      contentComponent={HTMLContent}
-      cover={post.frontmatter.cover}
-      meta_title={post.frontmatter.meta_title}
-      meta_desc={post.frontmatter.meta_description}
-      tags={post.frontmatter.tags}
-      title={post.frontmatter.title}
-      slug={post.fields.slug}
-    />
+    <Layout>
+      <ArticleTemplate
+        content={post.html}
+        contentComponent={HTMLContent}
+        cover={post.frontmatter.cover}
+        meta_title={post.frontmatter.meta_title}
+        meta_desc={post.frontmatter.meta_description}
+        tags={post.frontmatter.tags}
+        title={post.frontmatter.title}
+        slug={post.fields.slug}
+      />
+    </Layout>
   )
 }
 

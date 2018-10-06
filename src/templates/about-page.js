@@ -1,10 +1,8 @@
-/**
- * Created by vaibhav on 31/3/18
- */
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Content, {HTMLContent} from '../components/Content'
+import Layout from '../components/layout-biz'
 
 export const AboutPageTemplate = ({title, content, contentComponent}) => {
   const PageContent = contentComponent || Content
@@ -51,17 +49,20 @@ const AboutPage = ({data}) => {
   const {markdownRemark: post} = data
 
   return (
-    <div>
-      <Helmet>
-        <title>{post.frontmatter.meta_title}</title>
-        <meta name='description' content={post.frontmatter.meta_description} />
-      </Helmet>
-      <AboutPageTemplate
-        contentComponent={HTMLContent}
-        title={post.frontmatter.title}
-        content={post.html}
-      />
-    </div>
+    <Layout>
+      <div>
+        <Helmet>
+          <title>{post.frontmatter.meta_title}</title>
+          <meta name='description' content={post.frontmatter.meta_description} />
+        </Helmet>
+        <AboutPageTemplate
+          contentComponent={HTMLContent}
+          title={post.frontmatter.title}
+          content={post.html}
+        />
+      </div>
+    </Layout>
+    
   )
 }
 

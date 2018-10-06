@@ -1,10 +1,8 @@
-/**
- * Created by vaibhav on 2/4/18
- */
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Contact from '../components/Contact'
+import Layout from '../components/layout-biz'
 
 export const ContactPageTemplate = ({
   title,
@@ -60,13 +58,15 @@ ContactPageTemplate.propTypes = {
 const ContactPage = ({data}) => {
   const {frontmatter} = data.markdownRemark
   return (
-    <ContactPageTemplate
-      title={frontmatter.title}
-      subtitle={frontmatter.subtitle}
-      meta_title={frontmatter.meta_title}
-      meta_description={frontmatter.meta_description}
-      contacts={frontmatter.contacts}
-    />
+    <Layout>
+      <ContactPageTemplate
+        title={frontmatter.title}
+        subtitle={frontmatter.subtitle}
+        meta_title={frontmatter.meta_title}
+        meta_description={frontmatter.meta_description}
+        contacts={frontmatter.contacts}
+      />
+    </Layout>
   )
 }
 

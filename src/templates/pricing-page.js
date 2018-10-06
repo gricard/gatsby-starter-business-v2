@@ -1,10 +1,8 @@
-/**
- * Created by vaibhav on 31/3/18
- */
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Pricing from '../components/Pricing'
+import Layout from '../components/layout-biz'
 
 export const PricingPageTemplate = ({
   title,
@@ -67,12 +65,15 @@ const PricingPage = ({data}) => {
   const {frontmatter} = data.markdownRemark
 
   return (
-    <PricingPageTemplate
-      title={frontmatter.title}
-      meta_title={frontmatter.meta_title}
-      meta_description={frontmatter.meta_description}
-      pricing={frontmatter.pricing}
-    />
+    <Layout>
+      <PricingPageTemplate
+        title={frontmatter.title}
+        meta_title={frontmatter.meta_title}
+        meta_description={frontmatter.meta_description}
+        pricing={frontmatter.pricing}
+      />
+    </Layout>
+    
   )
 }
 

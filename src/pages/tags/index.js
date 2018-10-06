@@ -1,6 +1,3 @@
-/**
- * Created by vaibhav on 31/3/18
- */
 import React from 'react'
 import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
@@ -18,7 +15,7 @@ const TagsPage = ({
             <div className='column is-10 is-offset-1'>
               <div className='section'>
                 <h1 className='title'>
-                                    Tags
+                  Tags
                 </h1>
               </div>
             </div>

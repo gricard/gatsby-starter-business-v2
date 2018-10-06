@@ -1,11 +1,9 @@
-/**
- * Created by vaibhav on 31/3/18
- */
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Offerings from '../components/Offerings'
 import Testimonials from '../components/Testimonials'
+import Layout from '../components/layout-biz'
 
 export const HomePageTemplate = ({
   title,
@@ -16,7 +14,7 @@ export const HomePageTemplate = ({
   meta_description,
   testimonials,
 }) => (
-  <div>
+  <div data-test="butts">
     <Helmet>
       <title>{meta_title}</title>
       <meta name='description' content={meta_description} />
@@ -78,15 +76,17 @@ const HomePage = ({data}) => {
   const {frontmatter} = data.markdownRemark
 
   return (
-    <HomePageTemplate
-      title={frontmatter.title}
-      meta_title={frontmatter.meta_title}
-      meta_description={frontmatter.meta_description}
-      heading={frontmatter.heading}
-      description={frontmatter.description}
-      offerings={frontmatter.offerings}
-      testimonials={frontmatter.testimonials}
-    />
+    <Layout>  
+      <HomePageTemplate
+        title={frontmatter.title}
+        meta_title={frontmatter.meta_title}
+        meta_description={frontmatter.meta_description}
+        heading={frontmatter.heading}
+        description={frontmatter.description}
+        offerings={frontmatter.offerings}
+        testimonials={frontmatter.testimonials}
+      />
+    </Layout>
   )
 }
 
